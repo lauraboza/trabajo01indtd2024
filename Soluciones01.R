@@ -97,12 +97,12 @@ X2
 # Resolverla con la función que devuelve la resolución de todos los métodos en una única tabla
 # ¿Qué ingrediente le recomendarías al chef?
 
-tb = crea.tablaX(c(45,30,25,50,
+tb2 = crea.tablaX(c(45,30,25,50,
                    35,20,30,40,
                    25,15,20,35,
                    50,40,30,60), numalternativas = 4, numestados = 4)
 
-p2_todos = criterio.Todos(tb, 0.4, F)
+p2_todos = criterio.Todos(tb2, 0.4, F)
 p2_todos
 #                    e1 e2 e3 e4 Wald Optimista Hurwicz Savage Laplace Punto Ideal
 # d1                 45 30 25 50   50        25      40     20   37.50       29.58
