@@ -30,5 +30,5 @@ X2
 
 # Resolverla tanto para situación favorable como desfavorable, con la función que devuelve la 
 # resolución de todos los métodos en una única tabla
-
+# ¿Qué ingrediente le recomendarías al chef para ambas situaciones?
 
