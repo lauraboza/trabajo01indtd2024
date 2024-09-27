@@ -94,8 +94,25 @@ colnames(X2) = c('e1','e2','e3','e4')
 rownames(X2) = c('d1','d2','d3','d4')
 X2
 
-# Resolverla tanto para situación favorable como desfavorable, con la función que devuelve la 
-# resolución de todos los métodos en una única tabla
-# ¿Qué ingrediente le recomendarías al chef para ambas situaciones?
+# Resolverla con la función que devuelve la resolución de todos los métodos en una única tabla
+# ¿Qué ingrediente le recomendarías al chef?
+
+tb = crea.tablaX(c(45,30,25,50,
+                   35,20,30,40,
+                   25,15,20,35,
+                   50,40,30,60), numalternativas = 4, numestados = 4)
+
+p2_todos = criterio.Todos(tb, 0.4, F)
+p2_todos
+#                    e1 e2 e3 e4 Wald Optimista Hurwicz Savage Laplace Punto Ideal
+# d1                 45 30 25 50   50        25      40     20   37.50       29.58
+# d2                 35 20 30 40   40        20      32     10   31.25       15.81
+# d3                 25 15 20 35   35        15      27      0   23.75        0.00
+# d4                 50 40 30 60   60        30      48     25   45.00       44.44
+# iAlt.Opt (Desfav.) -- -- -- --   d3        d3      d3     d3      d3          d3
+
+# Luego al chef le recomendaría usar el champiñón, ya que el tiempo de preparación es 
+# más corto.
+
 
 
