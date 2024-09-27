@@ -28,7 +28,6 @@ colnames(X2) = c('e1','e2','e3','e4')
 rownames(X2) = c('d1','d2','d3','d4')
 X2
 
-# Resolverla tanto para situación favorable como desfavorable, con la función que devuelve la 
-# resolución de todos los métodos en una única tabla
-# ¿Qué ingrediente le recomendarías al chef para ambas situaciones?
+# Resolverla con la función que devuelve la resolución de todos los métodos en una única tabla
+# ¿Qué ingrediente le recomendarías al chef?
 
