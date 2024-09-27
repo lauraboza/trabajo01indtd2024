@@ -1,5 +1,7 @@
 ## ENUNCIADO CON SOLUCIONES TAREA 1
 
+source("teoriadecision_funciones_incertidumbre.R")
+
 # PROBLEMA 1
 
 # Sea la tabla de decisión con 5 estados de la naturaleza y 4 alternativas de la siguiente 
@@ -12,6 +14,70 @@ X1
 
 # Resolverla tanto para situación favorable como desfavorable, con cada uno de los 
 # criterios por separado
+
+tb = crea.tablaX(c(5,4,6,2,3,
+                    1,7,8,7,5,
+                    2,0,8,9,5,
+                    4,3,-1,9,10), numalternativas = 4, numestados = 5)
+
+
+# Situación favorable:
+p1_wald = criterio.Wald(tb, T)
+(p1_wald$AlternativaOptima)  # Alternativa 1
+
+p1_opt = criterio.Optimista(tb, T)
+(p1_opt$AlternativaOptima)   # Alternativa 4
+
+p1_hur = criterio.Hurwicz(tb, 0.4, T)
+(p1_hur$AlternativaOptima)   # Alternativa 2
+
+p1_hurg = criterio.Hurwicz.General(tb, 0.4, T)
+(p1_hurg$AlternativaOptima)   # Alternativa 2
+
+dibuja.criterio.Hurwicz(tb, T)
+dibuja.criterio.Hurwicz_Intervalos(tb, T, T)
+#               Intervalo      Alternativa
+# Soluciones  "( 0 , 0.333 )"     "1"        
+#            "( 0.333 , 0.5 )"    "2"        
+#              "( 0.5 , 1 )"      "4" 
+
+p1_sav = criterio.Savage(tb, T)
+(p1_sav$AlternativaOptima)   # Alternativa 2
+
+p1_lap = criterio.Laplace(tb, T)
+(p1_lap$AlternativaOptima)   # Alternativa 2
+
+p1_pid = criterio.PuntoIdeal(tb, T)
+(p1_pid$AlternativaOptima)   # Alternativa 2
+
+
+# Situación desfavorable:
+p1d_wald = criterio.Wald(tb, F)
+(p1d_wald$AlternativaOptima)  # Alternativa 1
+
+p1d_opt = criterio.Optimista(tb, F)
+(p1d_opt$AlternativaOptima)   # Alternativa 4
+
+p1d_hur = criterio.Hurwicz(tb, 0.4, F)
+(p1d_hur$AlternativaOptima)   # Alternativa 1
+
+p1d_hurg = criterio.Hurwicz.General(tb, 0.4, F)
+(p1d_hurg$AlternativaOptima)   # Alternativa 1
+
+dibuja.criterio.Hurwicz(tb, F)
+dibuja.criterio.Hurwicz_Intervalos(tb, F, T)
+#               Intervalo      Alternativa
+# Soluciones  "( 0 , 0.571 )"     "1"        
+#             "( 0.571 , 1 )"     "4"        
+
+p1d_sav = criterio.Savage(tb, F)
+(p1d_sav$AlternativaOptima)   # Alternativa 1 y 4
+
+p1d_lap = criterio.Laplace(tb, F)
+(p1d_lap$AlternativaOptima)   # Alternativa 1
+
+p1d_pid = criterio.PuntoIdeal(tb, F)
+(p1d_pid$AlternativaOptima)   # Alternativa 1
 
 
 
@@ -30,3 +96,6 @@ X2
 
 # Resolverla tanto para situación favorable como desfavorable, con la función que devuelve la 
 # resolución de todos los métodos en una única tabla
+# ¿Qué ingrediente le recomendarías al chef para ambas situaciones?
+
+
