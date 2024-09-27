@@ -1,4 +1,5 @@
 INTRODUCCIÓN:
+
 En este repositorio "trabajo01indtd2024" se encuentra mi primer trabajo individual de la asignatura Teoría de la Decisión.
 Consiste en inventarse dos problemas parecidos a los de la Hoja 1, y resolverlos con las funciones que se encuentran en "teoriadecision_funciones_incertidumbre.R".
 
